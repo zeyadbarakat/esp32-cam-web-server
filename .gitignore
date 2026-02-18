@@ -1,0 +1,23 @@
+# ESP-IDF
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.ci
+sdkconfig.defaults
+*.map
+*.elf
+*.bin
+*.hex
+*.uf2
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+.history/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,21 @@
+menu "Application Configuration"
+
+    menu "WiFi AP Setting"
+
+        config AP_WIFI_SSID
+            string "AP WiFi SSID (hotspot name)"
+            default "ESP32-CAM"
+            help
+                SSID (network name) for the ESP32's WiFi hotspot.
+                Your phone will see this name in WiFi settings.
+
+        config AP_WIFI_PASSWORD
+            string "AP WiFi Password"
+            default "12345678"
+            help
+                Password for the ESP32's WiFi hotspot.
+                Minimum 8 characters, or leave empty for an open network.
+
+    endmenu
+
+endmenu

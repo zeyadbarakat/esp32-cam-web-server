@@ -52,7 +52,7 @@ static EventGroupHandle_t s_wifi_event_group;
 #define WIFI_FAIL_BIT BIT1
 
 /* Retry Logic */
-#define MAX_RETRY 10
+#define MAX_RETRY 12
 static int s_retry_num = 0;
 
 /* Global State */
@@ -182,7 +182,7 @@ void start_sta_mode(const char *ssid, const char *pass) {
   // Wait for connection
   EventBits_t bits = xEventGroupWaitBits(
       s_wifi_event_group, WIFI_CONNECTED_BIT | WIFI_FAIL_BIT, pdTRUE, pdFALSE,
-      pdMS_TO_TICKS(30000)); // Increased timeout for retries
+      pdMS_TO_TICKS(45000)); // Increased timeout for retries
 
   if (bits & WIFI_CONNECTED_BIT) {
     ESP_LOGI(TAG, "Connected to %s!", ssid);
